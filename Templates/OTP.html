@@ -1,0 +1,193 @@
+<html>
+  <head>
+   <title>OTP Verification Form</title>
+  </head>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            height: 100vh;
+            background-color: #D8E1E8;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .otp-image {
+            width: 200px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        button{
+          border-radius: 2px;
+          color:rgb(3, 3, 250);
+        
+        }
+      
+  </style>
+  <body>
+    
+      <form action="VerifyEmail" method="post">
+        {% csrf_token %}
+        <div class="container">
+        <h1>OTP Verification</h1>
+        <img src="/static/otp.png" alt="OTP Verification Image" class="otp-image">
+        <p id="otp-info">One time password has been sent via email to your (<span id="user-email">email@example.com</span>).<br> Enter the OTP below to verify it.</p>
+        <div>
+          <input type="number" max="9" min="0" name="one" required/>
+          <input type="number" max="9" min="0"  name="two" required />
+          <input type="number" max="9" min="0" name="three" required />
+          <input type="number" max="9" min="0" name="four" required />
+        </div>
+        <br>
+        <button type="submit">Verify OTP</button>
+      </form>
+    </div>
+  </body>
+</html> 
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #D8E1E8;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 60px;
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+        .timer {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #e74c3c;
+        }
+        .otp-image {
+            width: 200px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .resend-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .resend-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+  <form method="post" action="http://localhost:8000/auth/VerifyEmail">
+  {% csrf_token %}
+    <div class="container">
+        <h1>OTP Verification</h1>
+        <img src="/static/otp.png" alt="OTP Verification Image" class="otp-image">
+        <p id="otp-info">One time password has been sent via email to your (<span id="user-email">email@example.com</span>). Enter the OTP below to verify it.</p>
+        <div>
+            <input type="text" maxlength="1" id="otp1">
+            <input type="text" maxlength="1" id="otp2">
+            <input type="text" maxlength="1" id="otp3">
+            <input type="text" maxlength="1" id="otp4">
+        </div>
+        <div class="timer" id="timer">02:00</div>
+        <button class="resend-button" id="resend-button">Resend OTP</button>
+    </div>
+
+    <script>
+        let userEmail = "email@example.com"; // Replace with actual email fetching logic
+
+        // Update the email in the OTP message
+        document.getElementById('user-email').textContent = userEmail;
+
+        // Timer function
+        let timerElement = document.getElementById('timer');
+        let timeLeft = 120;
+        let resendButton = document.getElementById('resend-button');
+
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            timerElement.textContent = `${minutes}:${seconds}`;
+            timeLeft--;
+
+            if (timeLeft >= 0) {
+                setTimeout(updateTimer, 1000);
+            } else {
+                // Timer has run out, show resend button
+                timerElement.textContent = "Time's up!";
+                resendButton.style.display = 'inline-block';
+            }
+        }
+
+        // Start the timer
+        updateTimer();
+
+        // Resend button event listener
+        resendButton.addEventListener('click', function() {
+            // Implement your resend OTP logic here
+            alert('A new OTP has been sent to your email.');
+            
+            // Reset the timer
+            timeLeft = 120;
+            resendButton.style.display = 'none';
+            updateTimer();
+        });
+    </script>
+</form>    
+</body>
+</html> -->

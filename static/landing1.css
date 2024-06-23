@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;  
+}
+
+.container{
+    max-width: 80vw;
+    font-family: sans-serif;
+}
+
+.navbar{
+    display: flex;
+    height:67px;
+    
+}
+
+.flex {
+    display: flex;
+}
+
+.topleft {
+    animation: slideInLeft 2s ease-in-out;
+}
+
+.topleft h1 {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.topleft p {
+    animation: fadeIn 3s ease-in-out;
+}
+
+.topright img {
+    width: 300px;
+    height: auto;
+    animation: slideInRight 2s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+ 
+.navbar li{
+    list-style: none;
+    margin: 0 12px;
+    
+}
+
+.navbar a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.topleft{
+    width:70%;
+    height: 70vh;
+}
+
+
+.topright{
+    width:50%;
+    height: 50vh;
+}
+
+.section1{
+    height: 85vh;
+}
+.about{
+    width:80%;
+    margin:auto;
+    text-align:center;
+    padding-top:100px;
+}
+.section1 h1{
+    font-size: 2rem;
+}
+
+.topright img{
+    margin-top: 90px;
+    margin-left: 20px;
+    height: 50vh;
+    width:35vw;
+}
+
+.logo{
+    font-size: 1.3rem;
+}
+
+.section2{
+    height:90vh;
+    padding-left: 63px;
+    padding-right:63px;
+}
+
+.section2 h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.box{
+    margin: 12px 22px;
+    min-width: 20vw;
+    
+    text-align: center;
+}
+
+.box ul{
+    list-style: none;
+}
+
+.box ul li{
+    margin:12px 2px;
+    padding-bottom: 20px;
+}
+
+
+.box img{
+    height: 40vh;
+    padding-top: 60px;
+}
+
+.section2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
